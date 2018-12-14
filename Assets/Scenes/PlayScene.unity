@@ -628,8 +628,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817132915a2886c46a1b5c7e6c2edd7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 15.71
-  height: 8.8
+  width: 17.4
+  height: 9.6
   nrOfBubbles: 10
   bubblePrefab: {fileID: 251888448882978279, guid: 1e55aa103b2977548987c0d8f71dd108,
     type: 3}
