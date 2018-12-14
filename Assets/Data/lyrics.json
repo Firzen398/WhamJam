@@ -1,142 +1,170 @@
 [
     {
         "text": "Last",
-        "starttime": 7.0,
-        "endtime": 8.0
+        "spawntime": 20.0,
+        "poptime": 32.0,
+        "soundduration": 1.0
     },
     {
         "text": "Christmas",
-        "starttime": 8.5,
-        "endtime": 10.0
+        "spawntime": 22.0,
+        "poptime": 33.0,
+        "soundduration": 1.0
     },
     {
         "text": "I Gave You",
-        "starttime": 12.0,
-        "endtime": 14.0
+        "spawntime": 24.0,
+        "poptime": 33.5,
+        "soundduration": 1.0
     },
     {
         "text": "My Heart",
-        "starttime": 16.0,
-        "endtime": 18.0
+        "spawntime": 26.0,
+        "poptime": 34.0,
+        "soundduration": 1.0
     },
     {
         "text": "But the very",
-        "starttime": 20.0,
-        "endtime": 22.0
+        "spawntime": 28.0,
+        "poptime": 36.0,
+        "soundduration": 1.0
     },
     {
         "text": "next day",
-        "starttime": 24.0,
-        "endtime": 26.0
+        "spawntime": 24.0,
+        "poptime": 26.0,
+        "soundduration": 1.0
     },
     {
         "text": "you gave it away",
-        "starttime": 28.0,
-        "endtime": 30.0
+        "spawntime": 28.0,
+        "poptime": 30.0,
+        "soundduration": 1.0
     },
     {
         "text": "This year",
-        "starttime": 32.0,
-        "endtime": 33.0
+        "spawntime": 32.0,
+        "poptime": 33.0,
+        "soundduration": 1.0
     },
     {
         "text": "To save me",
-        "starttime": 36.0,
-        "endtime": 38.0
+        "spawntime": 36.0,
+        "poptime": 38.0,
+        "soundduration": 1.0
     },
     {
         "text": "from tears",
-        "starttime": 40.0,
-        "endtime": 42.0
+        "spawntime": 40.0,
+        "poptime": 42.0,
+        "soundduration": 1.0
     },
     {
         "text": "I'll give it",
-        "starttime": 43.0,
-        "endtime": 44.0
+        "spawntime": 43.0,
+        "poptime": 44.0,
+        "soundduration": 1.0
     },
     {
         "text": "to someone special",
-        "starttime": 45.0,
-        "endtime": 46.0
+        "spawntime": 45.0,
+        "poptime": 46.0,
+        "soundduration": 1.0
     },
     {
         "text": "Once bitten",
-        "starttime": 47.0,
-        "endtime": 48.0
+        "spawntime": 47.0,
+        "poptime": 48.0,
+        "soundduration": 1.0
     },
     {
         "text": "and twice shy",
-        "starttime": 49.0,
-        "endtime": 50.0
+        "spawntime": 49.0,
+        "poptime": 50.0,
+        "soundduration": 1.0
     },
     {
         "text": "I keep my distance",
-        "starttime": 51.0,
-        "endtime": 52.0
+        "spawntime": 51.0,
+        "poptime": 52.0,
+        "soundduration": 1.0
     },
     {
         "text": "But you still catch my eye.",
-        "starttime": 53.0,
-        "endtime": 54.0
+        "spawntime": 53.0,
+        "poptime": 54.0,
+        "soundduration": 1.0
     },
     {
         "text": "Tell me, baby,",
-        "starttime": 55.0,
-        "endtime": 56.0
+        "spawntime": 55.0,
+        "poptime": 56.0,
+        "soundduration": 1.0
     },
     {
         "text": "Do you recognize me?",
-        "starttime": 57.0,
-        "endtime": 58.0
+        "spawntime": 57.0,
+        "poptime": 58.0,
+        "soundduration": 1.0
     },
     {
         "text": "Well,",
-        "starttime": 59.0,
-        "endtime": 60.0
+        "spawntime": 59.0,
+        "poptime": 60.0,
+        "soundduration": 1.0
     },
     {
         "text": "It's been a year,",
-        "starttime": 62.0,
-        "endtime": 64.0
+        "spawntime": 62.0,
+        "poptime": 64.0,
+        "soundduration": 1.0
     },
     {
         "text": "It doesn't surprise me",
-        "starttime": 65.0,
-        "endtime": 66.0
+        "spawntime": 65.0,
+        "poptime": 66.0,
+        "soundduration": 1.0
     },
     {
         "text": "(Merry Christmas)",
-        "starttime": 67.0,
-        "endtime": 68.0
+        "spawntime": 67.0,
+        "poptime": 68.0,
+        "soundduration": 1.0
     },
     {
         "text": "I wrapped it up and sent it",
-        "starttime": 69.0,
-        "endtime": 70.0
+        "spawntime": 69.0,
+        "poptime": 70.0,
+        "soundduration": 1.0
     },
     {
         "text": "With a note saying, I love you,",
-        "starttime": 71.0,
-        "endtime": 72.0
+        "spawntime": 71.0,
+        "poptime": 72.0,
+        "soundduration": 1.0
     },
     {
         "text": "I meant it",
-        "starttime": 73.0,
-        "endtime": 74.0
+        "spawntime": 73.0,
+        "poptime": 74.0,
+        "soundduration": 1.0
     },
     {
         "text": "Now I know what a fool I've been.",
-        "starttime": 75.0,
-        "endtime": 76.0
+        "spawntime": 75.0,
+        "poptime": 76.0,
+        "soundduration": 1.0
     },
     {
         "text": "But if you kissed me now",
-        "starttime": 77.0,
-        "endtime": 78.0
+        "spawntime": 77.0,
+        "poptime": 78.0,
+        "soundduration": 1.0
     },
     {
         "text": "I know you'd fool me again.",
-        "starttime": 79.0,
-        "endtime": 88.0
+        "spawntime": 79.0,
+        "poptime": 88.0,
+        "soundduration": 1.0
     }
 ]

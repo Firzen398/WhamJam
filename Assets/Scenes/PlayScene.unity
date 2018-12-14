@@ -155,7 +155,6 @@ GameObject:
   m_Component:
   - component: {fileID: 177612724}
   - component: {fileID: 177612723}
-  - component: {fileID: 177612725}
   m_Layer: 0
   m_Name: background
   m_TagString: Untagged
@@ -225,19 +224,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &177612725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 177612722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bca8651d16884a42bfb13f8fb6b2b0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  path: Assets/Data/lyrics.json
 --- !u!1 &248635216
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +628,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1630092372}
+  - component: {fileID: 1630092373}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -663,6 +650,19 @@ Transform:
   m_Father: {fileID: 136534837}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1630092373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630092371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e0b294427fb794dbe7983ba7730a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  songManager: {fileID: 806729089}
 --- !u!1 &1804757482
 GameObject:
   m_ObjectHideFlags: 0

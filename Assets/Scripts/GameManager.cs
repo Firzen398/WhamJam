@@ -17,35 +17,45 @@ public class GameManager : MonoBehaviour
 
     public Word [] WordsArray;
 
-    private int wordIndex;
+    private int wordIndexSpawn;
+    private int wordIndexPop;
 
-    private void Start()
+    private float gameStartTime;
+
+
+    void Start()
     {
-        songManager.GameStart();
-
         using (var reader = new StreamReader(LYRICSFILE))
         {
             WordsArray = (Word[])JsonConvert.DeserializeObject<Word[]>(reader.ReadToEnd());
+            Debug.Log($"Loaded {WordsArray.Length} WordBubbles");
         }
-        
+
+        StartGame();
     }
 
+    private void StartGame()
+    { 
+        songManager.GameStart();
+
+        gameStartTime = Time.fixedDeltaTime;
+
+    }
+    
     private void Update()
     {
-        if (wordIndex >= 0 && wordIndex < WordsArray.Length)
+        float timeSinceGameStart = Time.realtimeSinceStartup - gameStartTime;
+
+        if (wordIndexSpawn >= 0 && wordIndexSpawn < WordsArray.Length)
         {
-            Word word = WordsArray[wordIndex];
-
-
-            if (Time.realtimeSinceStartup > word.StartTime)
+            Word word = WordsArray[wordIndexSpawn];
+            if (timeSinceGameStart > word.SpawnTime)
             {
-                Debug.Log($"{word.StartTime} : {word.Text}");
-                wordIndex++;
+                Debug.Log($"{word.SpawnTime} : {word.Text}");
+                wordIndexSpawn++;
             }
-
-
-
         }
+
 
     }
 }
@@ -53,11 +63,14 @@ public class GameManager : MonoBehaviour
 [JsonObject]
 public class Word
 {
-    [JsonProperty("starttime")]
-    public float StartTime;
+    [JsonProperty("spawntime")]
+    public float SpawnTime;
 
-    [JsonProperty("endtime")]
-    public float EndTime;
+    [JsonProperty("poptime")]
+    public float PopTime;
+
+    [JsonProperty("soundduration")]
+    public float SoundDuration;
 
     [JsonProperty("text")]
     public string Text;
