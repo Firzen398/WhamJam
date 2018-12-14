@@ -63,7 +63,6 @@
     <Compile Include="Assets\Scripts\BubbleManager.cs" />
     <Compile Include="Assets\Scripts\BubbleScript.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\MainScript.cs" />
     <Compile Include="Assets\Scripts\SongManager.cs" />
     <Compile Include="Assets\Scripts\WordInterval.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">

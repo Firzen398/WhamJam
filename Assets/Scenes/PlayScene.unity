@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bca8651d16884a42bfb13f8fb6b2b0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  path: Assets/Data/lyrics.json
 --- !u!1 &248635216
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,6 +630,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 15.71
   height: 8.8
+  nrOfBubbles: 10
+  bubblePrefab: {fileID: 251888448882978279, guid: 1e55aa103b2977548987c0d8f71dd108,
+    type: 3}
 --- !u!1 &1630092371
 GameObject:
   m_ObjectHideFlags: 0
