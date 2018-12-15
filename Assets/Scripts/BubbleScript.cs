@@ -18,9 +18,9 @@ public class BubbleScript : MonoBehaviour
     private float maxX;
     private float maxY;
 
-    private float activeTime;
+    private float startedTime;
+    private float popTime;
     private float duration;
-
 
     [SerializeField]
     private TextMesh textMesh;
@@ -29,36 +29,68 @@ public class BubbleScript : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>() == null ? gameObject.AddComponent<Rigidbody2D>() : GetComponent<Rigidbody2D>(); ;
         rigidbody.AddForce(direction*speed, ForceMode2D.Impulse);
-        
     }
 
     void Update()
     {
-        activeTime += Time.deltaTime;
-
-        if (activeTime >= duration)
+        if (Time.time >=  popTime)
             BubblePop();
     }
 
-    public void Initialise(Vector3 position, Vector3 direction, string word, float duration, BubbleManager bubbleManager)
+    private void OnPopBubble()
+    {
+        rigidbody.bodyType = RigidbodyType2D.Dynamic;
+        bubbleManager.PopBubble(this);
+    }
+
+    private void ChangeDirection()
+    {
+        rigidbody.bodyType = RigidbodyType2D.Dynamic;
+        Vector3 newDirection = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), 0);
+        direction = newDirection.normalized;
+
+        rigidbody.AddForce(direction * speed, ForceMode2D.Impulse);
+    }
+
+    public void Initialise(Vector3 position, Vector3 direction, string word, float startedTime, float duration, float popTime, BubbleManager bubbleManager)
     {
         transform.position = position;
         this.direction = direction;
         this.word = word;
         this.bubbleManager = bubbleManager;
         this.duration = duration;
+        this.startedTime = startedTime;
+        this.popTime = popTime;
 
-        activeTime = 0f;
         textMesh.text = word;
     }
     
     public void BubblePop()
     {
-        bubbleManager.PopBubble(this);
+        if (bubbleManager != null)
+            OnPopBubble();
     }
 
-    public void OnMouseUp()
+    public void OnMouseUpAsButton()
     {
-        BubblePop();
+        if (Time.time >= popTime - duration)
+        {
+            BubblePop();
+        }
+        else
+        {
+            ChangeDirection();
+        }
+        
+    }
+
+    public void OnMouseDown()
+    {
+        // We clicked inside the threshold time.
+        //if(Time.time >= popTime - duration)
+        {
+            rigidbody.bodyType = RigidbodyType2D.Static;
+        }
     }
 }
+

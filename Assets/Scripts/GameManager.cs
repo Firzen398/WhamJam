@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
         bubbleManager.BubblePop += BubblePoped;
 
-        gameStartTime = Time.realtimeSinceStartup;
+        gameStartTime = Time.time;
         Debug.Log($"gameStartTime {gameStartTime}");
 
         wordIndexSpawn = 0;
@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
             Debug.Log($"Spawn {word.SpawnTime} : {word.Text}");
             wordIndexSpawn++;
 
-            var bubbleScript = bubbleManager.SpawnNewBubble(word.Text, word.PopTime - word.SpawnTime);
+            var bubbleScript = bubbleManager.SpawnNewBubble(word.Text, Time.time, word.SoundDuration, word.PopTime);
             currentBubbles.Add(word, bubbleScript);            
         }
     }
