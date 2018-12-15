@@ -46,27 +46,39 @@ public class GameManager : MonoBehaviour
     { 
         songManager.GameStart();
 
+        bubbleManager.BubblePop += BubblePoped;
+
         gameStartTime = Time.realtimeSinceStartup;
         Debug.Log($"gameStartTime {gameStartTime}");
+
+        wordIndexSpawn = 0;
+        for(int i = 0; i < bubbleManager.MaxBubbles; i++)
+        {
+            SpawnNewWord();
+        }
     }
     
-    private void Update()
+    private void SpawnNewWord()
     {
-        float timeSinceGameStart = Time.realtimeSinceStartup - gameStartTime;
-
         if (wordIndexSpawn >= 0 && wordIndexSpawn < WordsArray.Length)
         {
             Word word = WordsArray[wordIndexSpawn];
-            if (timeSinceGameStart >= word.SpawnTime)
-            {
-                Debug.Log($"Spawn {word.SpawnTime} : {word.Text}");
-                wordIndexSpawn++;
+            Debug.Log($"Spawn {word.SpawnTime} : {word.Text}");
+            wordIndexSpawn++;
 
-                var bubbleScript = bubbleManager.SpawnNewBubble(word.Text, word.PopTime - word.SpawnTime);
-                currentBubbles.Add(word, bubbleScript);
-            }
+            var bubbleScript = bubbleManager.SpawnNewBubble(word.Text, word.PopTime - word.SpawnTime);
+            currentBubbles.Add(word, bubbleScript);            
         }
+    }
 
+    private void BubblePoped(object sende, System.EventArgs e)
+    {
+        SpawnNewWord();
+    }
+    /*
+    private void Update()
+    {
+        float timeSinceGameStart = Time.realtimeSinceStartup - gameStartTime;
 
         Word bubbleToRemove = null;
         foreach (var bubble in currentBubbles)
@@ -84,7 +96,7 @@ public class GameManager : MonoBehaviour
             currentBubbles.Remove(bubbleToRemove);
         }
 
-    }
+    }*/
 }
 
 [JsonObject]

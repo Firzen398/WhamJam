@@ -18,6 +18,9 @@ public class BubbleScript : MonoBehaviour
     private float maxX;
     private float maxY;
 
+    private float activeTime;
+    private float duration;
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>() == null ? gameObject.AddComponent<Rigidbody2D>() : GetComponent<Rigidbody2D>(); ;
@@ -26,15 +29,21 @@ public class BubbleScript : MonoBehaviour
 
     void Update()
     {
-      //  transform.position += direction * speed;        
+        activeTime += Time.deltaTime;
+
+        if (activeTime >= duration)
+            BubblePop();
     }
 
-    public void Initialise(Vector3 position, Vector3 direction, string word, BubbleManager bubbleManager)
+    public void Initialise(Vector3 position, Vector3 direction, string word, float duration, BubbleManager bubbleManager)
     {
         transform.position = position;
         this.direction = direction;
         this.word = word;
         this.bubbleManager = bubbleManager;
+        this.duration = duration;
+
+        activeTime = 0f;
     }
     
     public void BubblePop()

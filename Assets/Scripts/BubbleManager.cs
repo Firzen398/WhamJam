@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +18,14 @@ public class BubbleManager : MonoBehaviour
 
     List<BubbleScript> availableBubbles = new List<BubbleScript>();
 
+    public int MaxBubbles
+    {
+        get { return maxNrOfBubbles; }
+    }
+
+    // Define an event.
+    public event System.EventHandler BubblePop;
+
     public void Start()
     {
         for(int i = 0; i < maxNrOfBubbles; i++)
@@ -33,7 +41,7 @@ public class BubbleManager : MonoBehaviour
     /// Returns the bubble that was spawned.
     /// </summary>
     /// <param name="word"></param>
-    /// <param name="duration"></param>
+    /// <param name="duration"> How long the bubble should be active on screen </param>
     /// <returns></returns>
     public BubbleScript SpawnNewBubble(string word, float duration)
     {
@@ -45,10 +53,10 @@ public class BubbleManager : MonoBehaviour
             availableBubbles.RemoveAt(lastAvailableIndex);
             obj.gameObject.SetActive(true);
 
-            Vector3 position = new Vector3(Random.Range(-width / 2, width / 2), 0, Random.Range(-height / 2, height / 2));
-            Vector3 direction = new Vector3(Random.Range(-width / 2, width / 2), 0, Random.Range(-height / 2, height / 2));
+            Vector3 position = new Vector3(Random.Range(-width / 2, width / 2), Random.Range(-height / 2, height / 2), -3f + lastAvailableIndex * 0.1f);
+            Vector3 direction = new Vector3(Random.Range(-width / 2, width / 2), Random.Range(-height / 2, height / 2), 0);
 
-            obj.Initialise(position, direction.normalized, word, this);
+            obj.Initialise(position, direction.normalized, word, duration, this);
             return obj;
         }
 
@@ -64,22 +72,16 @@ public class BubbleManager : MonoBehaviour
     {
         availableBubbles.Add(obj);
         obj.gameObject.SetActive(false);
+
+        OnBubblePop(System.EventArgs.Empty);
     }
 
-    void OnDrawGizmos()
+    private void OnBubblePop(System.EventArgs e)
     {
-        Gizmos.color = Color.blue;
-        float wHalf = (width * .5f);
-        float hHalf = (height * .5f);
-
-        Vector3 topLeftCorner = new Vector3(transform.position.x - wHalf, transform.position.y + hHalf, 1f);
-        Vector3 topRightCorner = new Vector3(transform.position.x + wHalf, transform.position.y + hHalf, 1f);
-        Vector3 bottomLeftCorner = new Vector3(transform.position.x - wHalf, transform.position.y - hHalf, 1f);
-        Vector3 bottomRightCorner = new Vector3(transform.position.x + wHalf, transform.position.y - hHalf, 1f);
-
-        Gizmos.DrawLine(topLeftCorner, topRightCorner);
-        Gizmos.DrawLine(topRightCorner, bottomRightCorner);
-        Gizmos.DrawLine(bottomRightCorner, bottomLeftCorner);
-        Gizmos.DrawLine(bottomLeftCorner, topLeftCorner);
+        System.EventHandler handler = BubblePop;
+        if (handler != null)
+        {
+            handler(this, e);
+        }
     }
 }
