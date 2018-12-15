@@ -11,7 +11,7 @@ public class BubbleManager : MonoBehaviour
     float height = 10;
 
     [SerializeField]
-    int nrOfBubbles = 10;
+    int maxNrOfBubbles = 10;
 
     [SerializeField]
     BubbleScript bubblePrefab;
@@ -20,10 +20,11 @@ public class BubbleManager : MonoBehaviour
 
     public void Start()
     {
-        for(int i = 0; i < nrOfBubbles; i++)
+        for(int i = 0; i < maxNrOfBubbles; i++)
         {
             BubbleScript bubble = Instantiate<BubbleScript>(bubblePrefab);
             bubble.transform.SetParent(transform);
+            availableBubbles.Add(bubble);
         }
     }
 
@@ -46,17 +47,22 @@ public class BubbleManager : MonoBehaviour
             Vector3 position = new Vector3(Random.Range(-width / 2, width / 2), 0, Random.Range(-height / 2, height / 2));
             Vector3 direction = new Vector3(Random.Range(-width / 2, width / 2), 0, Random.Range(-height / 2, height / 2));
 
-            obj.Initialise(position, direction.normalized, word);
+            obj.Initialise(position, direction.normalized, word, this);
             return obj;
         }
 
-        // Error.
+        // No new bubbles can be spawned.
         return null;
     }
 
+    /// <summary>
+    /// Handle the poping of the bubble.
+    /// </summary>
+    /// <param name="obj"></param>
     public void PopBubble(BubbleScript obj)
     {
         availableBubbles.Add(obj);
+        obj.gameObject.SetActive(false);
     }
 
     void OnDrawGizmos()
