@@ -42,9 +42,14 @@ public class BubbleScript : MonoBehaviour
     [SerializeField]
     private Image cloud;
 
+    private CapsuleCollider2D collider;
+
+    private bool mouseDown = false;
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>() == null ? gameObject.AddComponent<Rigidbody2D>() : GetComponent<Rigidbody2D>(); ;
+        
         rigidbody.AddForce(direction*speed, ForceMode2D.Impulse);
         progressBar.SetActive(false);
     }
@@ -53,13 +58,14 @@ public class BubbleScript : MonoBehaviour
     {
         if (Time.time >=  popTime)
             BubblePop();
-
-
-        if (mouseDownStartTime > 0)
+        
+        if (mouseDown)
         {
-            float t = ( Time.timeSinceLevelLoad - mouseDownStartTime) * 3.0f;
-            
-            SetProgress(0.0f); // TODO fill 0..1 here
+            float currentDur = popTime - Time.time;
+            float progress = 1f - currentDur / duration;
+
+            if (progress < 1f)
+                SetProgress(progress); 
         }
 
         if (rigidbody.IsSleeping() && rigidbody.bodyType == RigidbodyType2D.Dynamic)
@@ -93,8 +99,10 @@ public class BubbleScript : MonoBehaviour
 
         text.text = word;
 
-        float scaleX = Math.Max(1, word.Length * 0.1f);
+        collider = GetComponent<CapsuleCollider2D>();
+        float scaleX = Math.Max(1, word.Length * 0.08f);
         cloud.transform.localScale = new Vector3(scaleX, 1, 1);
+        //collider.size = new Vector2(collider.size.x * scaleX, collider.size.y);
     }
     
     public void BubblePop()
@@ -124,15 +132,20 @@ public class BubbleScript : MonoBehaviour
 
     public void OnMouseDown()
     {
+        mouseDown = true;
         rigidbody.bodyType = RigidbodyType2D.Static;
-        mouseDownStartTime = Time.timeSinceLevelLoad;
+        mouseDownStartTime = Time.time;
 
         // We clicked inside the threshold time.
         if (Time.time >= popTime - duration)
         {
             progressBar.SetActive(true);
         }
+    }
 
+    public void OnMouseUp()
+    {
+        mouseDown = false;
     }
 }
 
