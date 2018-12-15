@@ -33,7 +33,10 @@ public class GameManager : MonoBehaviour
         //string json = File.ReadAllText(Application.dataPath + LYRICSFILE);
         TextAsset json = Resources.Load<TextAsset>("lyrics");
 
-        WordsArray = (Word[])JsonConvert.DeserializeObject<Word[]>(json.text);
+        //Lyrics lyrics = JsonUtility.FromJson<Lyrics>(json.text);
+        //WordsArray = lyrics.lyrics;
+
+        WordsArray = (Word[])JsonConvert.DeserializeObject<Lyrics>(json.text).lyrics;
         Debug.Log($"Loaded {WordsArray.Length} WordBubbles");
 
         StartGame();
@@ -84,6 +87,12 @@ public class GameManager : MonoBehaviour
     }
 }
 
+[JsonObject]
+public class Lyrics
+{
+    [JsonProperty("lyrics")]
+    public Word[] lyrics;
+}
 
 
 [JsonObject]
