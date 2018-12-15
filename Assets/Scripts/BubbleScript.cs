@@ -45,6 +45,8 @@ public class BubbleScript : MonoBehaviour
     [SerializeField]
     private GameManager gameManager;
 
+    private bool mouseDown = false;
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>() == null ? gameObject.AddComponent<Rigidbody2D>() : GetComponent<Rigidbody2D>(); ;
@@ -61,13 +63,14 @@ public class BubbleScript : MonoBehaviour
             BubblePop();
 
 
-        if (mouseDownStartTime > 0)
+        if (mouseDown)
         {
-            float t = ( Time.timeSinceLevelLoad - mouseDownStartTime) * 3.0f;
-            
-            SetProgress(0.0f); // TODO fill 0..1 here
-        }
+            float currentDur = popTime - Time.time;
+            float progress = 1f - currentDur / duration;
 
+            if (progress < 1f)
+                SetProgress(progress);
+        }
         if (rigidbody.IsSleeping() && rigidbody.bodyType == RigidbodyType2D.Dynamic)
             ChangeDirection();
     }
@@ -106,7 +109,7 @@ public class BubbleScript : MonoBehaviour
 
         text.text = word;
 
-        float scaleX = Math.Max(1, word.Length * 0.1f);
+        float scaleX = Math.Max(1, word.Length * 0.08f);
         cloud.transform.localScale = new Vector3(scaleX, 1, 1);
     }
     
@@ -140,6 +143,7 @@ public class BubbleScript : MonoBehaviour
 
     public void OnMouseDown()
     {
+        mouseDown = true;
         rigidbody.bodyType = RigidbodyType2D.Static;
         mouseDownStartTime = Time.timeSinceLevelLoad;
 
@@ -149,6 +153,11 @@ public class BubbleScript : MonoBehaviour
             progressBar.SetActive(true);
         }
 
+    }
+
+    public void OnMouseUp()
+    {
+        mouseDown = false;
     }
 }
 
