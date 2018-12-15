@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class BubbleScript : MonoBehaviour
@@ -27,15 +28,19 @@ public class BubbleScript : MonoBehaviour
     private float duration;
 
     private float mouseDownStartTime;
+    
 
     [SerializeField]
-    private TextMesh textMesh;
+    private Text text;
 
     [SerializeField]
     private GameObject progressBar;
 
     [SerializeField]
     private GameObject progressQuad;
+
+    [SerializeField]
+    private Image cloud;
 
     void Start()
     {
@@ -87,7 +92,10 @@ public class BubbleScript : MonoBehaviour
         this.duration = duration + intervalIncrease;
         this.popTime = popTime + intervalIncrease / 2f;
 
-        textMesh.text = word;
+        text.text = word;
+
+        float scaleX = Math.Max(1, word.Length * 0.1f);
+        cloud.transform.localScale = new Vector3(scaleX, 1, 1);
     }
     
     public void BubblePop()
@@ -106,7 +114,6 @@ public class BubbleScript : MonoBehaviour
         {
             ChangeDirection();
         }
-        
     }
 
     public void OnMouseDown()
