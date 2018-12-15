@@ -21,10 +21,15 @@ public class BubbleScript : MonoBehaviour
     private float activeTime;
     private float duration;
 
+
+    [SerializeField]
+    private TextMesh textMesh;
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>() == null ? gameObject.AddComponent<Rigidbody2D>() : GetComponent<Rigidbody2D>(); ;
         rigidbody.AddForce(direction*speed, ForceMode2D.Impulse);
+        
     }
 
     void Update()
@@ -44,10 +49,16 @@ public class BubbleScript : MonoBehaviour
         this.duration = duration;
 
         activeTime = 0f;
+        textMesh.text = word;
     }
     
     public void BubblePop()
     {
         bubbleManager.PopBubble(this);
+    }
+
+    public void OnMouseUp()
+    {
+        BubblePop();
     }
 }
