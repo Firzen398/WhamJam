@@ -42,14 +42,9 @@ public class BubbleScript : MonoBehaviour
     [SerializeField]
     private Image cloud;
 
-    private CapsuleCollider2D collider;
-
-    private bool mouseDown = false;
-
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>() == null ? gameObject.AddComponent<Rigidbody2D>() : GetComponent<Rigidbody2D>(); ;
-        
         rigidbody.AddForce(direction*speed, ForceMode2D.Impulse);
         progressBar.SetActive(false);
     }
@@ -58,14 +53,13 @@ public class BubbleScript : MonoBehaviour
     {
         if (Time.time >=  popTime)
             BubblePop();
-        
-        if (mouseDown)
-        {
-            float currentDur = popTime - Time.time;
-            float progress = 1f - currentDur / duration;
 
-            if (progress < 1f)
-                SetProgress(progress); 
+
+        if (mouseDownStartTime > 0)
+        {
+            float t = ( Time.timeSinceLevelLoad - mouseDownStartTime) * 3.0f;
+            
+            SetProgress(0.0f); // TODO fill 0..1 here
         }
 
         if (rigidbody.IsSleeping() && rigidbody.bodyType == RigidbodyType2D.Dynamic)
@@ -99,10 +93,8 @@ public class BubbleScript : MonoBehaviour
 
         text.text = word;
 
-        collider = GetComponent<CapsuleCollider2D>();
-        float scaleX = Math.Max(1, word.Length * 0.08f);
+        float scaleX = Math.Max(1, word.Length * 0.1f);
         cloud.transform.localScale = new Vector3(scaleX, 1, 1);
-        //collider.size = new Vector2(collider.size.x * scaleX, collider.size.y);
     }
     
     public void BubblePop()
@@ -132,20 +124,15 @@ public class BubbleScript : MonoBehaviour
 
     public void OnMouseDown()
     {
-        mouseDown = true;
         rigidbody.bodyType = RigidbodyType2D.Static;
-        mouseDownStartTime = Time.time;
+        mouseDownStartTime = Time.timeSinceLevelLoad;
 
         // We clicked inside the threshold time.
         if (Time.time >= popTime - duration)
         {
             progressBar.SetActive(true);
         }
-    }
 
-    public void OnMouseUp()
-    {
-        mouseDown = false;
     }
 }
 

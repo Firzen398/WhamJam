@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         TextAsset json = Resources.Load<TextAsset>("lyrics");
 
         WordsArray = (Word[])JsonConvert.DeserializeObject<Lyrics>(json.text).lyrics;
-      //  Debug.Log($"Loaded {WordsArray.Length} WordBubbles");
+        Debug.Log($"Loaded {WordsArray.Length} WordBubbles");
 
         StartGame();
     }
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         bubbleManager.BubblePop += BubblePoped;
 
         gameStartTime = Time.time;
-       // Debug.Log($"gameStartTime {gameStartTime}");
+        Debug.Log($"gameStartTime {gameStartTime}");
 
         wordIndexSpawn = 0;
         for(int i = 0; i < bubbleManager.MaxBubbles; i++)
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         if (wordIndexSpawn >= 0 && wordIndexSpawn < WordsArray.Length)
         {
             Word word = WordsArray[wordIndexSpawn];
-           // Debug.Log($"Spawn {word.SpawnTime} : {word.Text}");
+            Debug.Log($"Spawn {word.SpawnTime} : {word.Text}");
             wordIndexSpawn++;
 
             var bubbleScript = bubbleManager.SpawnNewBubble(word.Text, word.SoundDuration, word.PopTime-13);
