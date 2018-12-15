@@ -576,6 +576,7 @@ MonoBehaviour:
   progressBar: {fileID: 510781886461865715}
   progressQuad: {fileID: 4325392100244589922}
   cloud: {fileID: 7238768521216514252}
+  gameManager: {fileID: 0}
 --- !u!50 &8825332063431771783
 Rigidbody2D:
   serializedVersion: 4

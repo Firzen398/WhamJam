@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     private readonly IDictionary<Word, BubbleScript> currentBubbles = new Dictionary<Word, BubbleScript>();
 
+    public int Score;
+
 
     void Start()
     {
@@ -36,7 +38,8 @@ public class GameManager : MonoBehaviour
     }
 
     private void StartGame()
-    { 
+    {
+        Score = 0;
         songManager.GameStart();
 
         bubbleManager.BubblePop += BubblePoped;
@@ -50,6 +53,14 @@ public class GameManager : MonoBehaviour
             SpawnNewWord();
         }
     }
+
+    public void AddScore(int score)
+    {
+        Score += score;
+        Debug.Log($"New Score: {Score}");
+        //TODO update UI
+    }
+
     
     private void SpawnNewWord()
     {
