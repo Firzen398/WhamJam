@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 { 
@@ -26,6 +27,8 @@ public class GameManager : MonoBehaviour
 
     public int Score;
 
+    [SerializeField]
+    public Text ScoreText;
 
     void Start()
     {
@@ -57,8 +60,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(int score)
     {
         Score += score;
-        Debug.Log($"New Score: {Score}");
-        //TODO update UI
+        ScoreText.text = $"Score: {Score}";
     }
 
     
