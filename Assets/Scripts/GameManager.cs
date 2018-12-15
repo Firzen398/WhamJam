@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
             Debug.Log($"Spawn {word.SpawnTime} : {word.Text}");
             wordIndexSpawn++;
 
-            var bubbleScript = bubbleManager.SpawnNewBubble(word.Text, Time.time, word.SoundDuration, word.PopTime);
+            var bubbleScript = bubbleManager.SpawnNewBubble(word.Text, Time.time, word.SoundDuration, word.PopTime-13);
             currentBubbles.Add(word, bubbleScript);            
         }
     }

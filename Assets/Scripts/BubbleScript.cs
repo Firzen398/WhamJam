@@ -107,14 +107,15 @@ public class BubbleScript : MonoBehaviour
 
     public void OnMouseDown()
     {
+        rigidbody.bodyType = RigidbodyType2D.Static;
+        mouseDownStartTime = Time.timeSinceLevelLoad;
+
         // We clicked inside the threshold time.
-        //if(Time.time >= popTime - duration)
+        if (Time.time >= popTime - duration)
         {
-            rigidbody.bodyType = RigidbodyType2D.Static;
             progressBar.SetActive(true);
-            mouseDownStartTime = Time.timeSinceLevelLoad;
         }
-        
+
     }
 }
 

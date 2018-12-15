@@ -3,188 +3,488 @@
         {
             "text": "Uh Uhh Uhhh",
             "spawntime": 2.0,
-            "poptime": 10.0,
-            "soundduration": 2.0
+            "poptime": 20.0,
+            "soundduration": 3.0
         },
         {
             "text": "Ohh woah",
             "spawntime": 3.0,
-            "poptime": 11.0,
+            "poptime": 22.0,
             "soundduration": 2.0
         },
         {
             "text": "Ahh Ahh",
             "spawntime": 4.0,
-            "poptime": 12.0,
+            "poptime": 29.0,
+            "soundduration": 3.0
+        },
+        {
+            "text": "Last Christmas",
+            "spawntime": 15.0,
+            "poptime": 33.0,
             "soundduration": 2.0
         },
         {
-            "text": "Last",
-            "spawntime": 15.0,
-            "poptime": 32.0,
-            "soundduration": 1.0
-        },
-        {
-            "text": "Christmas",
-            "spawntime": 16.0,
-            "poptime": 33.0,
-            "soundduration": 1.0
-        },
-        {
-            "text": "I Gave You",
+            "text": "I Gave You My Heart",
             "spawntime": 17.0,
-            "poptime": 33.5,
-            "soundduration": 1.0
+            "poptime": 35,
+            "soundduration": 2.0
         },
         {
-            "text": "My Heart",
-            "spawntime": 26.0,
-            "poptime": 34.0,
-            "soundduration": 1.0
-        },
-        {
-            "text": "But the very",
+            "text": "But the very next day",
             "spawntime": 28.0,
-            "poptime": 36.0,
-            "soundduration": 1.0
-        },
-        {
-            "text": "next day",
-            "spawntime": 24.0,
-            "poptime": 26.0,
-            "soundduration": 1.0
+            "poptime": 37.0,
+            "soundduration": 2.0
         },
         {
             "text": "you gave it away",
             "spawntime": 28.0,
-            "poptime": 30.0,
-            "soundduration": 1.0
+            "poptime": 40.0,
+            "soundduration": 3.0
         },
         {
             "text": "This year",
             "spawntime": 32.0,
-            "poptime": 33.0,
-            "soundduration": 1.0
-        },
-        {
-            "text": "To save me",
-            "spawntime": 36.0,
-            "poptime": 38.0,
-            "soundduration": 1.0
-        },
-        {
-            "text": "from tears",
-            "spawntime": 40.0,
             "poptime": 42.0,
-            "soundduration": 1.0
+            "soundduration": 2.0
         },
         {
-            "text": "I'll give it",
-            "spawntime": 43.0,
+            "text": "To save me from tears",
+            "spawntime": 36.0,
             "poptime": 44.0,
-            "soundduration": 1.0
+            "soundduration": 2.0
         },
         {
-            "text": "to someone special",
+          "text": "I'll give it to someone special",
+          "spawntime": 45.0,
+          "poptime": 48.0,
+          "soundduration": 4.0
+        },
+        {
+            "text": "Last Christmas",
+            "spawntime": 15.0,
+            "poptime": 51.0,
+            "soundduration": 2.0
+        },
+        {
+            "text": "I Gave You My Heart",
+            "spawntime": 17.0,
+            "poptime": 53,
+            "soundduration": 2.0
+        },
+        {
+            "text": "But the very next day",
+            "spawntime": 28.0,
+            "poptime": 55.0,
+            "soundduration": 2.0
+        },
+        {
+            "text": "you gave it away",
+            "spawntime": 28.0,
+            "poptime": 58.0,
+            "soundduration": 3.0
+        },
+        {
+            "text": "This year",
+            "spawntime": 32.0,
+            "poptime": 60.0,
+            "soundduration": 2.0
+        },
+        {
+            "text": "To save me from tears",
+            "spawntime": 36.0,
+            "poptime": 62.0,
+            "soundduration": 2.0
+        },
+        {
+            "text": "I'll give it to someone special",
             "spawntime": 45.0,
-            "poptime": 46.0,
-            "soundduration": 1.0
+            "poptime": 66.0,
+            "soundduration": 4.0
         },
         {
-            "text": "Once bitten",
+            "text": "Once bitten and twice shy",
             "spawntime": 47.0,
-            "poptime": 48.0,
-            "soundduration": 1.0
-        },
-        {
-            "text": "and twice shy",
-            "spawntime": 49.0,
-            "poptime": 50.0,
-            "soundduration": 1.0
+            "poptime": 90.0,
+            "soundduration": 5.0
         },
         {
             "text": "I keep my distance",
             "spawntime": 51.0,
-            "poptime": 52.0,
+            "poptime": 91.0,
             "soundduration": 1.0
         },
         {
             "text": "But you still catch my eye.",
             "spawntime": 53.0,
-            "poptime": 54.0,
-            "soundduration": 1.0
+            "poptime": 94.0,
+            "soundduration": 3.0
         },
         {
             "text": "Tell me, baby,",
             "spawntime": 55.0,
-            "poptime": 56.0,
-            "soundduration": 1.0
+            "poptime": 96.0,
+            "soundduration": 2.0
         },
         {
             "text": "Do you recognize me?",
             "spawntime": 57.0,
-            "poptime": 58.0,
-            "soundduration": 1.0
+            "poptime": 98.0,
+            "soundduration": 2.0
         },
         {
-            "text": "Well,",
+            "text": "Well, It's been a year",
             "spawntime": 59.0,
-            "poptime": 60.0,
-            "soundduration": 1.0
-        },
-        {
-            "text": "It's been a year,",
-            "spawntime": 62.0,
-            "poptime": 64.0,
-            "soundduration": 1.0
+            "poptime": 100.0,
+            "soundduration": 2.0
         },
         {
             "text": "It doesn't surprise me",
             "spawntime": 65.0,
-            "poptime": 66.0,
-            "soundduration": 1.0
-        },
-        {
-            "text": "(Merry Christmas)",
-            "spawntime": 67.0,
-            "poptime": 68.0,
-            "soundduration": 1.0
+            "poptime": 103.0,
+            "soundduration": 3.0
         },
         {
             "text": "I wrapped it up and sent it",
             "spawntime": 69.0,
-            "poptime": 70.0,
-            "soundduration": 1.0
+            "poptime": 107.0,
+            "soundduration": 3.0
         },
         {
-            "text": "With a note saying, I love you,",
+            "text": "With a note saying,",
             "spawntime": 71.0,
-            "poptime": 72.0,
-            "soundduration": 1.0
+            "poptime": 109.0,
+            "soundduration": 2.0
         },
         {
-            "text": "I meant it",
+            "text": "I love you,I meant it",
             "spawntime": 73.0,
-            "poptime": 74.0,
-            "soundduration": 1.0
+            "poptime": 112.0,
+            "soundduration": 3.0
         },
         {
-            "text": "Now I know what a fool I've been.",
+          "text": "Now I know",
+          "spawntime": 75.0,
+          "poptime": 113.0,
+          "soundduration": 1.0
+        },
+        {
+            "text": "what a fool I've been.",
             "spawntime": 75.0,
-            "poptime": 76.0,
-            "soundduration": 1.0
+            "poptime": 115.0,
+            "soundduration": 2.0
         },
         {
             "text": "But if you kissed me now",
             "spawntime": 77.0,
-            "poptime": 78.0,
+            "poptime": 118.5,
+            "soundduration": 3.5
+        },
+      {
+        "text": "I know you'd fool me again.",
+        "spawntime": 79.0,
+        "poptime": 120.0,
+        "soundduration": 1.5
+      },
+      {
+            "text": "Last Christmas",
+            "spawntime": 15.0,
+            "poptime": 123.0,
+            "soundduration": 2.0
+        },
+        {
+            "text": "I Gave You My Heart",
+            "spawntime": 17.0,
+            "poptime": 125,
+            "soundduration": 2.0
+        },
+        {
+            "text": "But the very next day",
+            "spawntime": 28.0,
+            "poptime": 127,
+            "soundduration": 2.0
+        },
+        {
+            "text": "you gave it away",
+            "spawntime": 28.0,
+            "poptime": 129.8,
+            "soundduration": 3.0
+        },
+        {
+            "text": "This year",
+            "spawntime": 32.0,
+            "poptime": 132.0,
+            "soundduration": 2.0
+        },
+        {
+            "text": "To save me from tears",
+            "spawntime": 36.0,
+            "poptime": 134.0,
+            "soundduration": 2.0
+        },
+      {
+        "text": "I'll give it to someone special",
+        "spawntime": 45.0,
+        "poptime": 138.0,
+        "soundduration": 4.0
+      },
+      {
+            "text": "Last Christmas",
+            "spawntime": 15.0,
+            "poptime": 141.0,
+            "soundduration": 2.0
+        },
+        {
+            "text": "I Gave You My Heart",
+            "spawntime": 17.0,
+            "poptime": 143,
+            "soundduration": 2.0
+        },
+        {
+            "text": "But the very next day",
+            "spawntime": 28.0,
+            "poptime": 145,
+            "soundduration": 2.0
+        },
+        {
+            "text": "you gave it away",
+            "spawntime": 28.0,
+            "poptime": 147.8,
+            "soundduration": 3.0
+        },
+        {
+            "text": "This year",
+            "spawntime": 32.0,
+            "poptime": 150.0,
+            "soundduration": 2.0
+        },
+        {
+            "text": "To save me from tears",
+            "spawntime": 36.0,
+            "poptime": 152.0,
+            "soundduration": 2.0
+        },
+      {
+        "text": "I'll give it to someone special",
+        "spawntime": 45.0,
+        "poptime": 156.0,
+        "soundduration": 4.0
+      },
+        {
+            "text": "Crowded room",
+            "spawntime": 45.0,
+            "poptime": 177.0,
+            "soundduration": 2.0
+        },
+        {
+            "text": "friends with tired eyes",
+            "spawntime": 45.0,
+            "poptime": 180.0,
+            "soundduration": 3.0
+        },
+        {
+            "text": "I'm hiding from you",
+            "spawntime": 45.0,
+            "poptime": 182.0,
+            "soundduration": 2.0
+        },
+        {
+            "text": "and your soul of ice",
+            "spawntime": 45.0,
+            "poptime": 184.0,
+            "soundduration": 2.0
+        },
+        {
+            "text": "My God I thought you were",
+            "spawntime": 45.0,
+            "poptime": 186.5,
+            "soundduration": 2.5
+        },
+        {
+            "text": "someone to rely on",
+            "spawntime": 45.0,
+            "poptime": 188.5,
+            "soundduration": 2.0
+        },
+        {
+            "text": "Me? I guess I was a",
+            "spawntime": 45.0,
+            "poptime": 191.0,
+            "soundduration": 2.5
+        },
+        {
+            "text": "shoulder to cry on",
+            "spawntime": 45.0,
+            "poptime": 192.0,
             "soundduration": 1.0
         },
         {
-            "text": "I know you'd fool me again.",
-            "spawntime": 79.0,
-            "poptime": 88.0,
-            "soundduration": 1.0
+            "text": "A face on a lover",
+            "spawntime": 45.0,
+            "poptime": 194.0,
+            "soundduration": 2.0
+        },
+        {
+            "text": "with a fire in his heart",
+            "spawntime": 45.0,
+            "poptime": 197.0,
+            "soundduration": 3.0
+        },
+        {
+            "text": "A man under cover but you",
+            "spawntime": 45.0,
+            "poptime": 200.0,
+            "soundduration": 3.0
+        },
+        {
+            "text": "tore me apart",
+            "spawntime": 45.0,
+            "poptime": 204.0,
+            "soundduration": 4.0
+        },
+        {
+            "text": "Now I've found a real love",
+            "spawntime": 45.0,
+            "poptime": 208.0,
+            "soundduration": 4.0
+        },
+        {
+            "text": "you'll never fool me again",
+            "spawntime": 45.0,
+            "poptime": 210.0,
+            "soundduration": 2.0
+        },
+      {
+            "text": "Last Christmas",
+            "spawntime": 15.0,
+            "poptime": 213.0,
+            "soundduration": 2.0
+        },
+        {
+            "text": "I Gave You My Heart",
+            "spawntime": 17.0,
+            "poptime": 215,
+            "soundduration": 2.0
+        },
+        {
+            "text": "But the very next day",
+            "spawntime": 28.0,
+            "poptime": 217,
+            "soundduration": 2.0
+        },
+        {
+            "text": "you gave it away",
+            "spawntime": 28.0,
+            "poptime": 220,
+            "soundduration": 3.0
+        },
+        {
+            "text": "This year",
+            "spawntime": 32.0,
+            "poptime": 222.0,
+            "soundduration": 2.0
+        },
+        {
+            "text": "To save me from tears",
+            "spawntime": 36.0,
+            "poptime": 224.0,
+            "soundduration": 2.0
+        },
+        {
+          "text": "I'll give it to someone special",
+          "spawntime": 45.0,
+          "poptime": 228.0,
+          "soundduration": 4.0
+        },
+      {
+            "text": "Last Christmas",
+            "spawntime": 15.0,
+            "poptime": 230.0,
+            "soundduration": 2.0
+        },
+        {
+            "text": "I Gave You My Heart",
+            "spawntime": 17.0,
+            "poptime": 232,
+            "soundduration": 2.0
+        },
+        {
+            "text": "But the very next day",
+            "spawntime": 28.0,
+            "poptime": 234,
+            "soundduration": 2.0
+        },
+        {
+            "text": "you gave it away",
+            "spawntime": 28.0,
+            "poptime": 237,
+            "soundduration": 3.0
+        },
+        {
+            "text": "This year",
+            "spawntime": 32.0,
+            "poptime": 239.0,
+            "soundduration": 2.0
+        },
+        {
+            "text": "To save me from tears",
+            "spawntime": 36.0,
+            "poptime": 241.0,
+            "soundduration": 2.0
+        },
+        {
+          "text": "I'll give it to someone special",
+          "spawntime": 45.0,
+          "poptime": 246.0,
+          "soundduration": 4.0
+        },
+        {
+            "text": "A face on a lover",
+            "spawntime": 45.0,
+            "poptime": 248.0,
+            "soundduration": 2.0
+        },
+        {
+            "text": "with a fire in his heart",
+            "spawntime": 45.0,
+            "poptime": 251.0,
+            "soundduration": 3.0
+        },
+        {  
+            "text": "A man under cover but you",
+            "spawntime": 45.0,
+            "poptime": 254.0,
+            "soundduration": 3.0
+        },
+        {
+            "text": "tore me apart",
+            "spawntime": 45.0,
+            "poptime": 256.0,
+            "soundduration": 4.0
+        },
+        {
+            "text": "Maybe next year",
+            "spawntime": 45.0,
+            "poptime": 258.0,
+            "soundduration": 2.0
+        },
+        {
+            "text": "I'll give it to someone",
+            "spawntime": 45.0,
+            "poptime": 262.0,
+            "soundduration": 2.0
+        },
+        {
+            "text": "I'll give it to someone special",
+            "spawntime": 45.0,
+            "poptime": 266.0,
+            "soundduration": 4.0
+        },
+        {
+            "text": "Special, someone",
+            "spawntime": 45.0,
+            "poptime": 273.0,
+            "soundduration": 7.0
         }
     ]
 }
