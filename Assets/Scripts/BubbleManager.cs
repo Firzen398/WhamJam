@@ -43,7 +43,7 @@ public class BubbleManager : MonoBehaviour
     /// <param name="word"></param>
     /// <param name="duration"> How long the bubble should be active on screen </param>
     /// <returns></returns>
-    public BubbleScript SpawnNewBubble(string word, float startedTime, float duration, float popTime)
+    public BubbleScript SpawnNewBubble(string word, float duration, float popTime)
     {
         BubbleScript obj ;
         int lastAvailableIndex = availableBubbles.Count - 1;
@@ -58,7 +58,7 @@ public class BubbleManager : MonoBehaviour
             float dirSpeed = 8.0f;
             Vector3 direction = new Vector3(Random.Range(-dirSpeed, dirSpeed), Random.Range(-dirSpeed, dirSpeed), 0);
 
-            obj.Initialise(position, direction.normalized, word, startedTime, duration, popTime, this);
+            obj.Initialise(position, direction.normalized, word, duration, popTime, this);
             return obj;
         }
 

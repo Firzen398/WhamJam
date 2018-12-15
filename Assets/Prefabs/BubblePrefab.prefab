@@ -499,6 +499,7 @@ MonoBehaviour:
   word: 
   direction: {x: 0, y: 0, z: 0}
   speed: 4
+  intervalIncrease: 0.5
   textMesh: {fileID: 6177345174511069217}
   progressBar: {fileID: 510781886461865715}
   progressQuad: {fileID: 4325392100244589922}
@@ -538,4 +539,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.59
+  m_Radius: 4.33

@@ -17,10 +17,12 @@ public class BubbleScript : MonoBehaviour
     [SerializeField]
     private float speed = 1f;
 
+    [SerializeField]
+    private float intervalIncrease = 0.5f;
+
     private float maxX;
     private float maxY;
 
-    private float startedTime;
     private float popTime;
     private float duration;
 
@@ -55,6 +57,9 @@ public class BubbleScript : MonoBehaviour
             Vector3 target = new Vector3(-1.78f + t, progressQuad.transform.localPosition.y, progressQuad.transform.localPosition.z);
             progressQuad.transform.localPosition = target;
         }
+
+        if (rigidbody.IsSleeping())
+            ChangeDirection();
     }
 
     private void OnPopBubble()
@@ -73,15 +78,14 @@ public class BubbleScript : MonoBehaviour
         rigidbody.AddForce(direction * speed, ForceMode2D.Impulse);
     }
 
-    public void Initialise(Vector3 position, Vector3 direction, string word, float startedTime, float duration, float popTime, BubbleManager bubbleManager)
+    public void Initialise(Vector3 position, Vector3 direction, string word, float duration, float popTime, BubbleManager bubbleManager)
     {
         transform.position = position;
         this.direction = direction;
         this.word = word;
         this.bubbleManager = bubbleManager;
-        this.duration = duration;
-        this.startedTime = startedTime;
-        this.popTime = popTime;
+        this.duration = duration + intervalIncrease;
+        this.popTime = popTime + intervalIncrease / 2f;
 
         textMesh.text = word;
     }
