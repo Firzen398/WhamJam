@@ -139,6 +139,8 @@ public class BubbleScript : MonoBehaviour
         {
             ChangeDirection();
         }
+
+        mouseDownStartTime = -1;
     }
 
     public void OnMouseDown()
