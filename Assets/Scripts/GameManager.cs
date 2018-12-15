@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public Text ScoreText;
 
+    private bool gamePlaying = false;
+
     void Start()
     {
         TextAsset json = Resources.Load<TextAsset>("lyrics");
@@ -40,8 +42,22 @@ public class GameManager : MonoBehaviour
         StartGame();
     }
 
-    private void StartGame()
+    void Update()
     {
+     /*   if(Input.GetKeyUp(KeyCode.S) && !gamePlaying)
+        {
+            StartGame();
+        }*/
+
+     /*   if (Input.GetKeyUp(KeyCode.P))
+        {
+            StopGame();
+        }*/
+    }
+
+    public void StartGame()
+    {
+        gamePlaying = true;
         Score = 0;
         songManager.GameStart();
 
@@ -55,6 +71,13 @@ public class GameManager : MonoBehaviour
         {
             SpawnNewWord();
         }
+    }
+
+    private void StopGame()
+    {
+        gamePlaying = false;
+        songManager.StopGame();
+     //   bubbleManager.StopGame();
     }
 
     public void AddScore(int score)

@@ -16,4 +16,9 @@ public class SongManager : MonoBehaviour
     {
         song.Play();
     }
+
+    public void StopGame()
+    {
+        song.Stop();
+    }
 }

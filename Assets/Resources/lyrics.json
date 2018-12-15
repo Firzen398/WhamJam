@@ -1,23 +1,5 @@
 {
-    "lyrics": [
-        {
-            "text": "Uh Uhh Uhhh",
-            "spawntime": 2.0,
-            "poptime": 20.0,
-            "soundduration": 3.0
-        },
-        {
-            "text": "Ohh woah",
-            "spawntime": 3.0,
-            "poptime": 22.0,
-            "soundduration": 2.0
-        },
-        {
-            "text": "Ahh Ahh",
-            "spawntime": 4.0,
-            "poptime": 29.0,
-            "soundduration": 3.0
-        },
+    "lyrics": [       
         {
             "text": "Last Christmas",
             "spawntime": 15.0,

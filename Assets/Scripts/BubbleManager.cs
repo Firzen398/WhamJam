@@ -37,6 +37,7 @@ public class BubbleManager : MonoBehaviour
         }
     }
 
+
     /// <summary>
     /// Returns the bubble that was spawned.
     /// </summary>
