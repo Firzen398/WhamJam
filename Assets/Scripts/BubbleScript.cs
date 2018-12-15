@@ -11,6 +11,8 @@ public class BubbleScript : MonoBehaviour
 
     [SerializeField]
     private Vector3 direction;
+
+    [SerializeField]
     private float speed = 1f;
 
     private float maxX;
@@ -19,7 +21,7 @@ public class BubbleScript : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>() == null ? gameObject.AddComponent<Rigidbody2D>() : GetComponent<Rigidbody2D>(); ;
-        rigidbody.AddForce(direction, ForceMode2D.Impulse);
+        rigidbody.AddForce(direction*speed, ForceMode2D.Impulse);
     }
 
     void Update()
