@@ -25,10 +25,17 @@ public class BubbleScript : MonoBehaviour
     [SerializeField]
     private TextMesh textMesh;
 
+    [SerializeField]
+    private GameObject progressBar;
+
+    [SerializeField]
+    private GameObject progressQuad;
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>() == null ? gameObject.AddComponent<Rigidbody2D>() : GetComponent<Rigidbody2D>(); ;
         rigidbody.AddForce(direction*speed, ForceMode2D.Impulse);
+        progressBar.SetActive(false);
     }
 
     void Update()
@@ -41,6 +48,7 @@ public class BubbleScript : MonoBehaviour
     {
         rigidbody.bodyType = RigidbodyType2D.Dynamic;
         bubbleManager.PopBubble(this);
+        progressBar.SetActive(false);
     }
 
     private void ChangeDirection()
@@ -90,7 +98,9 @@ public class BubbleScript : MonoBehaviour
         //if(Time.time >= popTime - duration)
         {
             rigidbody.bodyType = RigidbodyType2D.Static;
+            progressBar.SetActive(true);
         }
+        
     }
 }
 
