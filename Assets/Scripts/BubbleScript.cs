@@ -58,7 +58,7 @@ public class BubbleScript : MonoBehaviour
             progressQuad.transform.localPosition = target;
         }
 
-        if (rigidbody.IsSleeping())
+        if (rigidbody.IsSleeping() && rigidbody.bodyType == RigidbodyType2D.Dynamic)
             ChangeDirection();
     }
 
