@@ -24,7 +24,8 @@ public class BubbleManager : MonoBehaviour
         {
             BubbleScript bubble = Instantiate<BubbleScript>(bubblePrefab);
             bubble.transform.SetParent(transform);
-            availableBubbles.Add(bubble);
+            bubble.gameObject.SetActive(false);
+            availableBubbles.Add(bubble);            
         }
     }
 
