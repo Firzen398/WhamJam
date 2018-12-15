@@ -1,19 +1,37 @@
 [
     {
+        "text": "Uh Uhh Uhhh",
+        "spawntime": 2.0,
+        "poptime": 10.0,
+        "soundduration": 2.0
+    },
+    {
+        "text": "Ohh woah",
+        "spawntime": 3.0,
+        "poptime": 11.0,
+        "soundduration": 2.0
+    },
+    {
+        "text": "Ahh Ahh",
+        "spawntime": 4.0,
+        "poptime": 12.0,
+        "soundduration": 2.0
+    },
+    {
         "text": "Last",
-        "spawntime": 20.0,
+        "spawntime": 15.0,
         "poptime": 32.0,
         "soundduration": 1.0
     },
     {
         "text": "Christmas",
-        "spawntime": 22.0,
+        "spawntime": 16.0,
         "poptime": 33.0,
         "soundduration": 1.0
     },
     {
         "text": "I Gave You",
-        "spawntime": 24.0,
+        "spawntime": 17.0,
         "poptime": 33.5,
         "soundduration": 1.0
     },

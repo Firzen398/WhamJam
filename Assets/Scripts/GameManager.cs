@@ -8,11 +8,14 @@ using System.Linq;
 
 public class GameManager : MonoBehaviour
 { 
-    const string LYRICSFILE = "Assets/Data/lyrics.json";
+    const string LYRICSFILE = "Assets/Data/lyrics";
 
 
     [SerializeField]
     private SongManager songManager;
+
+    [SerializeField]
+    private BubbleManager bubbleManager;
 
 
     public Word [] WordsArray;
@@ -22,14 +25,16 @@ public class GameManager : MonoBehaviour
 
     private float gameStartTime;
 
+    private readonly IDictionary<Word, BubbleScript> currentBubbles = new Dictionary<Word, BubbleScript>();
+
 
     void Start()
     {
-        using (var reader = new StreamReader(LYRICSFILE))
-        {
-            WordsArray = (Word[])JsonConvert.DeserializeObject<Word[]>(reader.ReadToEnd());
-            Debug.Log($"Loaded {WordsArray.Length} WordBubbles");
-        }
+        //string json = File.ReadAllText(Application.dataPath + LYRICSFILE);
+        TextAsset json = Resources.Load<TextAsset>("lyrics");
+
+        WordsArray = (Word[])JsonConvert.DeserializeObject<Word[]>(json.text);
+        Debug.Log($"Loaded {WordsArray.Length} WordBubbles");
 
         StartGame();
     }
@@ -38,8 +43,8 @@ public class GameManager : MonoBehaviour
     { 
         songManager.GameStart();
 
-        gameStartTime = Time.fixedDeltaTime;
-
+        gameStartTime = Time.realtimeSinceStartup;
+        Debug.Log($"gameStartTime {gameStartTime}");
     }
     
     private void Update()
@@ -49,16 +54,37 @@ public class GameManager : MonoBehaviour
         if (wordIndexSpawn >= 0 && wordIndexSpawn < WordsArray.Length)
         {
             Word word = WordsArray[wordIndexSpawn];
-            if (timeSinceGameStart > word.SpawnTime)
+            if (timeSinceGameStart >= word.SpawnTime)
             {
-                Debug.Log($"{word.SpawnTime} : {word.Text}");
+                Debug.Log($"Spawn {word.SpawnTime} : {word.Text}");
                 wordIndexSpawn++;
+
+                var bubbleScript = bubbleManager.SpawnNewBubble(word.Text, word.PopTime - word.SpawnTime);
+                currentBubbles.Add(word, bubbleScript);
             }
         }
 
 
+        Word bubbleToRemove = null;
+        foreach (var bubble in currentBubbles)
+        {
+            if (Time.realtimeSinceStartup > bubble.Key.PopTime)
+            {
+                Debug.Log($"Pop {bubble.Key.Text}");
+                bubbleManager.PopBubble(bubble.Value);
+                bubbleToRemove = bubble.Key;
+            }
+        }
+
+        if (bubbleToRemove != null)
+        {
+            currentBubbles.Remove(bubbleToRemove);
+        }
+
     }
 }
+
+
 
 [JsonObject]
 public class Word
@@ -75,3 +101,4 @@ public class Word
     [JsonProperty("text")]
     public string Text;
 }
+

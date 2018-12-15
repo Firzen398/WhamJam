@@ -1048,6 +1048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songManager: {fileID: 806729089}
+  bubbleManager: {fileID: 839440918}
 --- !u!1 &1659930002
 GameObject:
   m_ObjectHideFlags: 0
