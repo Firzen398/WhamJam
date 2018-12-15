@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BubbleScript : MonoBehaviour
 {
@@ -22,6 +24,8 @@ public class BubbleScript : MonoBehaviour
     private float popTime;
     private float duration;
 
+    private float mouseDownStartTime;
+
     [SerializeField]
     private TextMesh textMesh;
 
@@ -42,6 +46,15 @@ public class BubbleScript : MonoBehaviour
     {
         if (Time.time >=  popTime)
             BubblePop();
+
+
+        if (mouseDownStartTime > 0)
+        {
+            float t = ( Time.timeSinceLevelLoad - mouseDownStartTime) * 3.0f;
+            t = Math.Min(t, 1.78f * 2);
+            Vector3 target = new Vector3(-1.78f + t, progressQuad.transform.localPosition.y, progressQuad.transform.localPosition.z);
+            progressQuad.transform.localPosition = target;
+        }
     }
 
     private void OnPopBubble()
@@ -99,6 +112,7 @@ public class BubbleScript : MonoBehaviour
         {
             rigidbody.bodyType = RigidbodyType2D.Static;
             progressBar.SetActive(true);
+            mouseDownStartTime = Time.timeSinceLevelLoad;
         }
         
     }
