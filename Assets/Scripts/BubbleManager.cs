@@ -54,7 +54,9 @@ public class BubbleManager : MonoBehaviour
             obj.gameObject.SetActive(true);
 
             Vector3 position = new Vector3(Random.Range(-width / 2, width / 2), Random.Range(-height / 2, height / 2), -3f + lastAvailableIndex * 0.1f);
-            Vector3 direction = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), 0);
+
+            float dirSpeed = 8.0f;
+            Vector3 direction = new Vector3(Random.Range(-dirSpeed, dirSpeed), Random.Range(-dirSpeed, dirSpeed), 0);
 
             obj.Initialise(position, direction.normalized, word, startedTime, duration, popTime, this);
             return obj;
