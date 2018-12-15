@@ -57,7 +57,7 @@ public class BubbleScript : MonoBehaviour
 
         if (mouseDownStartTime > 0)
         {
-            float t = ( Time.time - mouseDownStartTime) * 3.0f;
+            float t = ( Time.timeSinceLevelLoad - mouseDownStartTime) * 3.0f;
             t = Math.Min(t, 1.78f * 2);
             Vector3 target = new Vector3(-1.78f + t, progressQuad.transform.localPosition.y, progressQuad.transform.localPosition.z);
             progressQuad.transform.localPosition = target;
@@ -119,7 +119,7 @@ public class BubbleScript : MonoBehaviour
     public void OnMouseDown()
     {
         rigidbody.bodyType = RigidbodyType2D.Static;
-        mouseDownStartTime = Time.time;
+        mouseDownStartTime = Time.timeSinceLevelLoad;
 
         // We clicked inside the threshold time.
         if (Time.time >= popTime - duration)
