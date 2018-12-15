@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 { 
@@ -24,6 +25,10 @@ public class GameManager : MonoBehaviour
 
     private readonly IDictionary<Word, BubbleScript> currentBubbles = new Dictionary<Word, BubbleScript>();
 
+    public int Score;
+
+    [SerializeField]
+    public Text ScoreText;
 
     void Start()
     {
@@ -36,7 +41,8 @@ public class GameManager : MonoBehaviour
     }
 
     private void StartGame()
-    { 
+    {
+        Score = 0;
         songManager.GameStart();
 
         bubbleManager.BubblePop += BubblePoped;
@@ -50,6 +56,13 @@ public class GameManager : MonoBehaviour
             SpawnNewWord();
         }
     }
+
+    public void AddScore(int score)
+    {
+        Score += score;
+        ScoreText.text = $"Score: {Score}";
+    }
+
     
     private void SpawnNewWord()
     {

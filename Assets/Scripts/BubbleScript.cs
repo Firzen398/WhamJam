@@ -42,11 +42,17 @@ public class BubbleScript : MonoBehaviour
     [SerializeField]
     private Image cloud;
 
+    [SerializeField]
+    private GameManager gameManager;
+
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>() == null ? gameObject.AddComponent<Rigidbody2D>() : GetComponent<Rigidbody2D>(); ;
         rigidbody.AddForce(direction*speed, ForceMode2D.Impulse);
         progressBar.SetActive(false);
+
+        gameManager = transform.root.GetComponentInChildren<GameManager>();
+        
     }
 
     void Update()
@@ -71,6 +77,13 @@ public class BubbleScript : MonoBehaviour
         rigidbody.bodyType = RigidbodyType2D.Dynamic;
         bubbleManager.PopBubble(this);
         progressBar.SetActive(false);
+
+        if (mouseDownStartTime > 0)
+        {
+            int score = (int) ((Time.time - mouseDownStartTime) * 10.0f);
+            score = Math.Max(1, score);
+            gameManager.AddScore(score);
+        }
     }
 
     private void ChangeDirection()
@@ -101,6 +114,9 @@ public class BubbleScript : MonoBehaviour
     {
         if (bubbleManager != null)
             OnPopBubble();
+
+
+
     }
 
     public void SetProgress(float progress)
