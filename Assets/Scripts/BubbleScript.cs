@@ -58,9 +58,8 @@ public class BubbleScript : MonoBehaviour
         if (mouseDownStartTime > 0)
         {
             float t = ( Time.timeSinceLevelLoad - mouseDownStartTime) * 3.0f;
-            t = Math.Min(t, 1.78f * 2);
-            Vector3 target = new Vector3(-1.78f + t, progressQuad.transform.localPosition.y, progressQuad.transform.localPosition.z);
-            progressQuad.transform.localPosition = target;
+            
+            SetProgress(0.0f); // TODO fill 0..1 here
         }
 
         if (rigidbody.IsSleeping() && rigidbody.bodyType == RigidbodyType2D.Dynamic)
@@ -102,6 +101,13 @@ public class BubbleScript : MonoBehaviour
     {
         if (bubbleManager != null)
             OnPopBubble();
+    }
+
+    public void SetProgress(float progress)
+    {
+        float p  = Math.Min(1, Math.Max(0, progress));
+        Vector3 target = new Vector3(-1.78f + p * 2 * 1.78f, progressQuad.transform.localPosition.y, progressQuad.transform.localPosition.z);
+        progressQuad.transform.localPosition = target;
     }
 
     public void OnMouseUpAsButton()
