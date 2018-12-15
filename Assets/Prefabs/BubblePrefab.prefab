@@ -301,13 +301,13 @@ TextMesh:
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 80
+  m_FontSize: 72
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Color:
     serializedVersion: 2
-    rgba: 4278552034
+    rgba: 4287967001
 --- !u!1 &6063051085907045112
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,9 +8,6 @@ using System.Linq;
 
 public class GameManager : MonoBehaviour
 { 
-    const string LYRICSFILE = "Assets/Data/lyrics";
-
-
     [SerializeField]
     private SongManager songManager;
 
@@ -30,11 +27,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        //string json = File.ReadAllText(Application.dataPath + LYRICSFILE);
         TextAsset json = Resources.Load<TextAsset>("lyrics");
-
-        //Lyrics lyrics = JsonUtility.FromJson<Lyrics>(json.text);
-        //WordsArray = lyrics.lyrics;
 
         WordsArray = (Word[])JsonConvert.DeserializeObject<Lyrics>(json.text).lyrics;
         Debug.Log($"Loaded {WordsArray.Length} WordBubbles");
